@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmarterPanther | LernPfad Digital GmbH</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
     <meta name="description"
         content="SmarterPanther: Die E-Learning-Plattform, die Kindern spielerisch Programmierlogik beibringt.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -57,8 +59,8 @@
         <header class="bg-white shadow-sm sticky top-0 z-40">
             <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
                 <div class="logo font-bold text-2xl text-brand mb-4 md:mb-0">
-                    <img src="assets/images/smarterpanther-logo.svg" alt="SmarterPanther Logo"
-                        class="h-10 inline-block mr-2" onerror="this.style.display='none'">
+                    <img src="assets/images/logo.png" alt="SmarterPanther Logo" class="h-10 inline-block mr-2"
+                        onerror="this.style.display='none'">
                     SmarterPanther
                 </div>
 
@@ -148,19 +150,63 @@
             </section>
 
             <section id="about" class="bg-white rounded-xl shadow-sm p-6 md:p-10 border border-gray-100">
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Über uns: LernPfad Digital GmbH</h2>
-                <p class="text-gray-600 mb-6">Wir sind ein 20-köpfiges Team aus Wien, das es sich zur Aufgabe gemacht
-                    hat, digitale Bildung in die Kinderzimmer und Klassenzimmer zu bringen.</p>
+                <div class="max-w-5xl mx-auto">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Über uns: LernPfad Digital GmbH</h2>
+                    <p class="text-lg text-gray-600 mb-10 leading-relaxed">
+                        Wir sind ein 20-köpfiges Team aus Wien, das es sich zur Aufgabe gemacht hat,
+                        digitale Bildung in die Kinderzimmer und Klassenzimmer zu bringen.
+                    </p>
 
-                <h3 class="text-xl font-semibold text-gray-800 mb-3">Unsere Marken</h3>
-                <p class="text-gray-600 mb-4">Lorem ipsum</p>
-                <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
-                    <li><strong>Lorem ipsum</strong> Lorem ipsum</li>
-                </ul>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Unsere Marken</h3>
+                    <p class="text-gray-600 mb-8">Um unser Produkt einfach wiederzuerkennen, setzen wir auf drei klare
+                        Elemente:</p>
 
-                <audio controls aria-label="Hörmarke der SmarterPanther abspielen" class="w-full md:w-1/2">
-                    <source src="assets/audio/sound.wav" type="audio/mpeg">
-                </audio>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                        <div
+                            class="bg-gray-50 rounded-xl p-6 border border-gray-200 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <span
+                                class="text-xs uppercase tracking-widest text-gray-500 font-bold mb-4">Wortmarke</span>
+                            <span class="text-2xl font-black text-gray-900 tracking-tight">Smartpanther</span>
+                        </div>
+
+                        <div
+                            class="bg-gray-50 rounded-xl p-6 border border-gray-200 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <span
+                                class="text-xs uppercase tracking-widest text-gray-500 font-bold mb-4">Bildmarke</span>
+                            <img src="assets/images/logo.png" alt="Logo Smartpanther"
+                                class="h-16 w-auto object-contain">
+                        </div>
+
+                        <div
+                            class="bg-gray-50 rounded-xl p-6 border border-gray-200 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <span
+                                class="text-xs uppercase tracking-widest text-gray-500 font-bold mb-6">Audiomarke</span>
+
+                            <div
+                                class="w-full max-w-[200px] bg-white border border-gray-200 rounded-full p-1.5 pr-4 flex items-center shadow-sm">
+
+                                <audio id="brand-audio" src="assets/audio/sound.wav" type="audio/wav"
+                                    preload="auto"></audio>
+
+                                <button id="audio-btn"
+                                    class="w-10 h-10 flex-shrink-0 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1">
+                                    <svg id="play-icon" class="w-4 h-4 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                    <svg id="pause-icon" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                                    </svg>
+                                </button>
+
+                                <div class="ml-3 text-sm font-medium text-gray-700">
+                                    Sound abspielen
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </section>
 
             <section id="lizenz" class="bg-white rounded-xl shadow-sm p-6 md:p-10 border border-gray-100">
@@ -319,7 +365,7 @@
                 <p class="text-blue-800 text-sm">
                     Bei nicht zufriedenstellenden Antworten aus oben genannter Kontaktmöglichkeit können Sie sich
                     mittels Beschwerde an die Österreichische Forschungsförderungsgesellschaft mit beschränkter Haftung
-                    (FFG) wenden. Die FFG nimmt über das Kontaktformular Beschwerden auf elektronischem Weg entgegen.
+                    (FFG) wenden. Die FFG nimmt über das Kontaktformular Beschwerden auf elektronische Weg entgegen.
                     <a href="https://www.ffg.at/form/kontaktformular-beschwerdestelle" class="underline">Kontaktformular
                         der Beschwerdestelle</a>
                 </p>
@@ -349,7 +395,8 @@
                 const mediaLicenses = ref([
                     { type: 'Bilder (Galerie)', source: 'Unsplash', license: 'Unsplash Lizenz' },
                     { type: 'Schriftart', source: 'Google Fonts', license: 'SIL Open Font License (OFL)' },
-                    { type: 'Audio (Hörmarke)', source: 'XHwZQ6GV (Freesound)', license: 'Attribution 3.0' }
+                    { type: 'Audio (Hörmarke)', source: 'XHwZQ6GV (Freesound)', license: 'Attribution 3.0' },
+                    { type: 'Logo', source: 'OpenAI (ChatGPT / DALL-E 3)', license: 'OpenAI Nutzungsbedingungen' }
                 ]);
 
                 const carouselImages = ref([
@@ -406,6 +453,34 @@
                 };
             }
         }).mount('#app');
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('brand-audio');
+            const btn = document.getElementById('audio-btn');
+            const playIcon = document.getElementById('play-icon');
+            const pauseIcon = document.getElementById('pause-icon');
+
+            if (audio && btn) {
+            
+                btn.addEventListener('click', function() {
+                    if (audio.paused) {
+                        audio.play();
+                        playIcon.classList.add('hidden');
+                        pauseIcon.classList.remove('hidden');
+                    } else {
+                        audio.pause();
+                        playIcon.classList.remove('hidden');
+                        pauseIcon.classList.add('hidden');
+                    }
+                });
+
+                audio.addEventListener('ended', function() {
+                    playIcon.classList.remove('hidden');
+                    pauseIcon.classList.add('hidden');
+                });
+            }
+        });
     </script>
 </body>
 

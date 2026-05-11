@@ -54,22 +54,22 @@
   - B2C: Freemium & Abo: Einsteiger-Module, weitere Module 9,99€ / Monat
   - B2B: Jahreslizenzen: Klassenlizenz oder Schullizenz auf jährlicher Basis
 = Barrierefreiheit
-- [ ] Wahrnehmbar (Nutzer müssen Informationen verstehen)
-- [ ] Bedienbar (auch mit Tastatur)
-- [ ] Verständlich (eindeutig)
-- [ ] Kompatibel mit unterschiedlichen Technologien
-- [ ] Neue Änderungen unter WCAG 2.2 
-  - [ ] Fokus nicht verdeckt durch zB.: Sticky Header
-  - [ ] Fokus deutlich sichtbar
+- [X] Wahrnehmbar (Nutzer müssen Informationen verstehen)
+- [X] Bedienbar (auch mit Tastatur)
+- [X] Verständlich (eindeutig)
+- [X] Kompatibel mit unterschiedlichen Technologien
+- [X] Neue Änderungen unter WCAG 2.2 
+  - [X] Fokus nicht verdeckt durch zB.: Sticky Header
+  - [X] Fokus deutlich sichtbar
   - [X] Alles was ziehbar auch durch Klicken
   - [X] Klickbares min. 24x24 CSS-Pixel groß
   - [X] Hilfe immer an gleicher Stelle
   - [X] Login muss alternativen Erlauben (Copy / Paste von Passwort)
-- [ ] Alte Kriterien umsetzen
-  - [ ] alternative Texte
-  - [ ] Untertitel
-  - [ ] min. 4.5:1 Kontrastratio
-  - [ ] kein Autostart ohne Stopp
+- [X] Alte Kriterien umsetzen
+  - [X] alternative Texte
+  - [X] Untertitel
+  - [X] min. 4.5:1 Kontrastratio
+  - [X] kein Autostart ohne Stopp
 - WCAG 2.2 AA 
 - Visuell ansprechend
 - [ ] Barrierefreiheiterklärung
@@ -80,7 +80,13 @@
   - [ ] Feedback und Kontaktmöglichkeiten
   - [ ] Durchsetzungsverfahren
 = Urheberrecht
+- [X] Bilder
+- [X] Schriftart
+- [X] Soundeffect
 = Marke
+- [X] Wortmarke: Smartpanther
+- [X] Bildmarke: Logo
+- [X] Audiomarke: Soundeffekt -> Panther Sound
 = Lizenz
 = Datenschutz
 = Gewerbe
