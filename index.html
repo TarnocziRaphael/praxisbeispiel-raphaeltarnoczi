@@ -7,13 +7,18 @@
     <title>SmarterPanther | LernPfad Digital GmbH</title>
     <meta name="description"
         content="SmarterPanther: Die E-Learning-Plattform, die Kindern spielerisch Programmierlogik beibringt.">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        space: ['"Space Mono"', 'monospace'],
+                    },
                     colors: {
                         brand: {
                             DEFAULT: '#2D2D2D',
@@ -43,7 +48,7 @@
 
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-    <div id="app">
+    <div id="app" class="font-space">
         <a href="#main-content"
             class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:bg-focus focus:text-white focus:px-4 focus:py-2 focus:z-50">
             Zum Hauptinhalt springen
@@ -78,12 +83,35 @@
                 <p class="text-lg text-gray-600 mb-8">Programmieren lernen für Kids (8-14 Jahre) – spielerisch, sicher
                     und zertifiziert.</p>
 
-                <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg overflow-hidden mb-10">
-                    <video controls aria-label="Vorstellungsvideo der SmarterPanther Plattform"
-                        class="w-full h-full object-cover">
-                        <source src="assets/videos/promo.mp4" type="video/mp4">
-                        Ihr Browser unterstützt das Video-Tag nicht.
-                    </video>
+                <div class="relative w-full aspect-video bg-gray-200 rounded-lg overflow-hidden mb-10 group"
+                    aria-label="Bildergalerie der SmarterPanther Plattform">
+
+                    <img :src="carouselImages[currentSlide].src" :alt="carouselImages[currentSlide].alt"
+                        class="w-full h-full object-cover transition-opacity duration-500">
+
+                    <button @click="prevSlide" aria-label="Vorheriges Bild"
+                        class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-brand/50 hover:bg-brand/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all focus:opacity-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+
+                    <button @click="nextSlide" aria-label="Nächstes Bild"
+                        class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-brand/50 hover:bg-brand/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all focus:opacity-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                        <button v-for="(img, index) in carouselImages" :key="index" @click="goToSlide(index)"
+                            :aria-label="'Gehe zu Bild ' + (index + 1)"
+                            :aria-current="currentSlide === index ? 'true' : 'false'"
+                            :class="['w-3 h-3 rounded-full transition-colors focus:ring-2 focus:ring-white', currentSlide === index ? 'bg-secondary' : 'bg-white/70 hover:bg-white']">
+                        </button>
+                    </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -131,7 +159,7 @@
                 </ul>
 
                 <audio controls aria-label="Hörmarke der SmarterPanther abspielen" class="w-full md:w-1/2">
-                    <source src="assets/sounds/soundlogo.mp3" type="audio/mpeg">
+                    <source src="assets/audio/sound.wav" type="audio/mpeg">
                 </audio>
             </section>
 
@@ -243,34 +271,23 @@
             <section id="barrierefreiheit" class="bg-blue-50 rounded-xl p-6 border border-blue-100">
                 <h2 class="text-xl font-bold text-blue-900 mb-2">Erklärung zur Barrierefreiheit</h2>
                 <p class="text-blue-800 text-sm">
-                    Diese Erklärung zur Barrierefreiheit gilt für die Website: <a href="https://tarnocziraphael.github.io/praxisbeispiel-raphaeltarnoczi/" class="underline">https://tarnocziraphael.github.io/praxisbeispiel-raphaeltarnoczi/</a>
+                    Diese Erklärung zur Barrierefreiheit gilt für die Website: <a
+                        href="https://tarnocziraphael.github.io/praxisbeispiel-raphaeltarnoczi/"
+                        class="underline">https://tarnocziraphael.github.io/praxisbeispiel-raphaeltarnoczi/</a>
                 </p>
                 <p class="font-bold text-blue-900 text-lg">Stand der Vereinbarkeit mit den Anforderungen</p>
                 <p class="text-blue-800 text-sm">
                     Diese Website ist wegen der folgenden Unvereinbarkeiten und Ausnahmen teilweise mit
                     Konformitätsstufe AA der "Richtlinien für barrierefreie Webinhalte Web - <a
-                        href="https://www.w3.org/TR/WCAG22/" class="underline">WCAG2.2</a>" beziehungsweise mit dem geltenden <a
-                        href="https://www.etsi.org/deliver/etsi_en/301500_301599/301549/02.01.02_60/en_301549v020102p.pdf" class="underline">Europäischen
-                            Standard EN 301 549 V2 1.2 (2018-08)</a> vereinbar.
+                        href="https://www.w3.org/TR/WCAG22/" class="underline">WCAG2.2</a>" beziehungsweise mit dem
+                    geltenden <a
+                        href="https://www.etsi.org/deliver/etsi_en/301500_301599/301549/02.01.02_60/en_301549v020102p.pdf"
+                        class="underline">Europäischen
+                        Standard EN 301 549 V2 1.2 (2018-08)</a> vereinbar.
                 </p>
-
-                <p class="font-bold text-blue-900 text-lg">Nicht barrierefreie Inhalte</p>
-                <div class="text-blue-800 text-sm">
-                    <p class="mb-2">
-                        Die nachstehenden aufgeführten Inhalte sind aus den folgenden Gründen nicht barrierefrei.
-                    </p>
-
-                    <ul class="list-disc ml-5 space-y-1">
-                        <li>
-                            Für das Werbevideo können keine Untertitel oder Textalternativen (Tracks) bereitgestellt werden, da das Video über keine Tonspur verfügt.
-                        </li>
-                    </ul>
-                </div>
-
-
                 <p class="font-bold text-blue-900 text-lg">Erstellung dieser Erklärung</p>
                 <p class="text-blue-800 text-sm">
-                    Diese Erklärung wurde am 11.05.2026 erstellt. Einzelne Seiteninhalten wurden von den Herausgebern
+                    Diese Erklärung wurde am 11.05.2026 erstellt. Einzelne Seiteninhalte wurden von den Herausgebern
                     bei Veröffentlichung neuer Inhalte geprüft. Diese Erklärung wurde zuletzt am 11.05.2026
                     aktualisiert.
                 </p>
@@ -278,10 +295,10 @@
                 <p class="font-bold text-blue-900 text-lg">Feedback und Kontaktmöglichkeiten</p>
                 <div class="text-blue-800 text-sm">
                     <p class="mb-2">
-                        Die Angebote und Services auf dieser Website werden laufend verbessert und ausgebaut. Dabei sind
-                        uns die Barrierefreiheit ein großes Anliegen. Sollte Ihnen jedoch Barrieren auffallen, welche
-                        sie an der Nutzung der Website hindern und diese nicht in dieser Erklärung angeführt sind,
-                        zögern Sie bitte nicht uns per E-Mail oder auf anderem Wege zu kontaktieren. Wir werden Ihre
+                        Die Angebote und Services auf dieser Website werden laufend verbessert und ausgebaut. Dabei ist
+                        uns die Barrierefreiheit ein großes Anliegen. Sollten Ihnen jedoch Barrieren auffallen, welche
+                        Sie an der Nutzung der Website hindern und diese nicht in dieser Erklärung angeführt sind,
+                        zögern Sie bitte nicht, uns per E-Mail oder auf anderem Wege zu kontaktieren. Wir werden Ihre
                         Anfrage prüfen und Sie ehestmöglich kontaktieren.
                     </p>
 
@@ -300,8 +317,11 @@
 
                 <p class="font-bold text-blue-900 text-lg">Durchsetzungsverfahren</p>
                 <p class="text-blue-800 text-sm">
-                    Bei nicht zufriedenstellenden Antworten aus oben genannter Kontaktmöglichkeit können Sie sich mittels Beschwerde an die Österreichische Forschungförderungsgesellschaft mit beschränkter Haftung (FFG) wenden. Die FFG nimmt über das Kontaktformular Beschweden auf elektronischen Weg entgegen. 
-                    <a href="https://www.ffg.at/form/kontaktformular-beschwerdestelle" class="underline">Kontaktformular der Beschwerdestelle</a>
+                    Bei nicht zufriedenstellenden Antworten aus oben genannter Kontaktmöglichkeit können Sie sich
+                    mittels Beschwerde an die Österreichische Forschungsförderungsgesellschaft mit beschränkter Haftung
+                    (FFG) wenden. Die FFG nimmt über das Kontaktformular Beschwerden auf elektronischem Weg entgegen.
+                    <a href="https://www.ffg.at/form/kontaktformular-beschwerdestelle" class="underline">Kontaktformular
+                        der Beschwerdestelle</a>
                 </p>
             </section>
 
@@ -327,9 +347,30 @@
                 ]);
 
                 const mediaLicenses = ref([
-                    { type: 'Lorem ipsum', source: 'Lorem ipsum', license: 'Lorem ipsum' },
-
+                    { type: 'Bilder (Galerie)', source: 'Unsplash', license: 'Unsplash Lizenz' },
+                    { type: 'Schriftart', source: 'Google Fonts', license: 'SIL Open Font License (OFL)' },
+                    { type: 'Audio (Hörmarke)', source: 'XHwZQ6GV (Freesound)', license: 'Attribution 3.0' }
                 ]);
+
+                const carouselImages = ref([
+                    { src: 'assets/images/pic1.jpg', alt: 'Blonder Junge lacht in die Kamera an Schreibtisch' },
+                    { src: 'assets/images/pic2.jpg', alt: 'Bild aus einem Computerraum, wo Schüler mithilfe der Software lernen' },
+                    { src: 'assets/images/pic3.jpg', alt: 'Vater und Sohn, die zusammen lernen' }
+                ]);
+
+                const currentSlide = ref(0);
+
+                const nextSlide = () => {
+                    currentSlide.value = (currentSlide.value + 1) % carouselImages.value.length;
+                };
+
+                const prevSlide = () => {
+                    currentSlide.value = currentSlide.value === 0 ? carouselImages.value.length - 1 : currentSlide.value - 1;
+                };
+
+                const goToSlide = (index) => {
+                    currentSlide.value = index;
+                };
 
                 const formData = ref({
                     name: '',
@@ -353,6 +394,11 @@
                 return {
                     navLinks,
                     mediaLicenses,
+                    carouselImages,
+                    currentSlide,
+                    nextSlide,
+                    prevSlide,
+                    goToSlide,
                     formData,
                     formSubmitted,
                     submitForm,
