@@ -37,7 +37,7 @@
 #counter(page).update(1)
 = Vorbereitung
 - Produkt
-  - LogikFüchse
+  - Smartpanther
   - E-Learning-Plattform
     - spielerische Vermittlung von Programmierlogik durch Blockaufgaben oder Python-Beispielen
   - Gamification durch Belohnung und anpassbaren, virtuellen Avatar
