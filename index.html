@@ -146,11 +146,12 @@
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Urheberrechtshinweise</h2>
                 <div class="overflow-x-auto">
                     <table class="min-w-full text-left border-collapse">
+                        <caption class="sr-only">Übersicht der Urheberrechtshinweise nach Medienart</caption>
                         <thead>
                             <tr class="bg-gray-100 text-gray-700">
-                                <th class="border-b p-3 font-semibold">Medienart</th>
-                                <th class="border-b p-3 font-semibold">Quelle / Autor</th>
-                                <th class="border-b p-3 font-semibold">Lizenz</th>
+                                <th scope="col" class="border-b p-3 font-semibold">Medienart</th>
+                                <th scope="col" class="border-b p-3 font-semibold">Quelle / Autor</th>
+                                <th scope="col" class="border-b p-3 font-semibold">Lizenz</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -177,18 +178,18 @@
                     <form @submit.prevent="submitForm" aria-label="Kontaktformular" class="space-y-4">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name:</label>
-                            <input type="text" id="name" v-model="formData.name" required aria-required="true"
+                            <input type="text" id="name" v-model="formData.name" required
                                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-secondary outline-none">
                         </div>
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-Mail
                                 (Eltern/Lehrer):</label>
-                            <input type="email" id="email" v-model="formData.email" required aria-required="true"
+                            <input type="email" id="email" v-model="formData.email" required
                                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-secondary outline-none">
                         </div>
                         <div>
                             <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Nachricht:</label>
-                            <textarea id="message" v-model="formData.message" rows="4" required aria-required="true"
+                            <textarea id="message" v-model="formData.message" rows="4" required
                                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-secondary outline-none"></textarea>
                         </div>
                         <button type="submit"
@@ -242,7 +243,65 @@
             <section id="barrierefreiheit" class="bg-blue-50 rounded-xl p-6 border border-blue-100">
                 <h2 class="text-xl font-bold text-blue-900 mb-2">Erklärung zur Barrierefreiheit</h2>
                 <p class="text-blue-800 text-sm">
-                    Lorem ipsum
+                    Diese Erklärung zur Barrierefreiheit gilt für die Website: <a href="https://tarnocziraphael.github.io/praxisbeispiel-raphaeltarnoczi/" class="underline">https://tarnocziraphael.github.io/praxisbeispiel-raphaeltarnoczi/</a>
+                </p>
+                <p class="font-bold text-blue-900 text-lg">Stand der Vereinbarkeit mit den Anforderungen</p>
+                <p class="text-blue-800 text-sm">
+                    Diese Website ist wegen der folgenden Unvereinbarkeiten und Ausnahmen teilweise mit
+                    Konformitätsstufe AA der "Richtlinien für barrierefreie Webinhalte Web - <a
+                        href="https://www.w3.org/TR/WCAG22/" class="underline">WCAG2.2</a>" beziehungsweise mit dem geltenden <a
+                        href="https://www.etsi.org/deliver/etsi_en/301500_301599/301549/02.01.02_60/en_301549v020102p.pdf" class="underline">Europäischen
+                            Standard EN 301 549 V2 1.2 (2018-08)</a> vereinbar.
+                </p>
+
+                <p class="font-bold text-blue-900 text-lg">Nicht barrierefreie Inhalte</p>
+                <div class="text-blue-800 text-sm">
+                    <p class="mb-2">
+                        Die nachstehenden aufgeführten Inhalte sind aus den folgenden Gründen nicht barrierefrei.
+                    </p>
+
+                    <ul class="list-disc ml-5 space-y-1">
+                        <li>
+                            Für das Werbevideo können keine Untertitel oder Textalternativen (Tracks) bereitgestellt werden, da das Video über keine Tonspur verfügt.
+                        </li>
+                    </ul>
+                </div>
+
+
+                <p class="font-bold text-blue-900 text-lg">Erstellung dieser Erklärung</p>
+                <p class="text-blue-800 text-sm">
+                    Diese Erklärung wurde am 11.05.2026 erstellt. Einzelne Seiteninhalten wurden von den Herausgebern
+                    bei Veröffentlichung neuer Inhalte geprüft. Diese Erklärung wurde zuletzt am 11.05.2026
+                    aktualisiert.
+                </p>
+
+                <p class="font-bold text-blue-900 text-lg">Feedback und Kontaktmöglichkeiten</p>
+                <div class="text-blue-800 text-sm">
+                    <p class="mb-2">
+                        Die Angebote und Services auf dieser Website werden laufend verbessert und ausgebaut. Dabei sind
+                        uns die Barrierefreiheit ein großes Anliegen. Sollte Ihnen jedoch Barrieren auffallen, welche
+                        sie an der Nutzung der Website hindern und diese nicht in dieser Erklärung angeführt sind,
+                        zögern Sie bitte nicht uns per E-Mail oder auf anderem Wege zu kontaktieren. Wir werden Ihre
+                        Anfrage prüfen und Sie ehestmöglich kontaktieren.
+                    </p>
+
+                    <ul class="list-disc ml-5 space-y-1">
+                        <li>
+                            Sämtliche Mitteilungen und Anregungen senden Sie uns bitte an
+                            <a href="mailto:contact@lernpfad.at"
+                                class="hover:text-secondary underline">contact@lernpfad.at</a>
+                        </li>
+                        <li>
+                            Bitte beschreiben Sie das Problem und führen Sie uns die URL(s) der betroffenen Website oder
+                            des Dokuments an.
+                        </li>
+                    </ul>
+                </div>
+
+                <p class="font-bold text-blue-900 text-lg">Durchsetzungsverfahren</p>
+                <p class="text-blue-800 text-sm">
+                    Bei nicht zufriedenstellenden Antworten aus oben genannter Kontaktmöglichkeit können Sie sich mittels Beschwerde an die Österreichische Forschungförderungsgesellschaft mit beschränkter Haftung (FFG) wenden. Die FFG nimmt über das Kontaktformular Beschweden auf elektronischen Weg entgegen. 
+                    <a href="https://www.ffg.at/form/kontaktformular-beschwerdestelle" class="underline">Kontaktformular der Beschwerdestelle</a>
                 </p>
             </section>
 
