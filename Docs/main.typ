@@ -37,7 +37,7 @@
 #counter(page).update(1)
 = Vorbereitung
 - Produkt
-  - Smartpanther
+  - SmarterPanther
   - E-Learning-Plattform
     - spielerische Vermittlung von Programmierlogik durch Blockaufgaben oder Python-Beispielen
   - Gamification durch Belohnung und anpassbaren, virtuellen Avatar
@@ -84,10 +84,28 @@
 - [X] Schriftart
 - [X] Soundeffect
 = Marke
-- [X] Wortmarke: Smartpanther
+- [X] Wortmarke: SmarterPanther
 - [X] Bildmarke: Logo
 - [X] Audiomarke: Soundeffekt -> Panther Sound
+- [X] Nizza-Klassen
+  - [X] 41: Erziehung / Ausbildung / Unterhaltung  -> Bereitsstellung von Online-Kursen
+  - [X] 42: Technologische Dienstleistungen -> Bereitsstellung und Hosting der Plattform
+  - [X] 9: Software / Digitale Medien -> herunterladbare App
 = Lizenz
+- [X] Nutzungsrechte
+  - [X] B2C: zeitliche befristet, nicht übertragbar für private Zwecke
+  - [X] B2B: vordefinierte Anzahl an Schülern und Lehrkräften im Unterricht -> keine Weitergabe an andere Schulen bei freien Plätzen
+  - [X] Reverse Engineering verboten um weiterzuverkaufen / App zu manipulieren
+- [X] Rechte bei Unternehmen
+  - [X] Alle Urheberrechte bleiben bei LernPfad Digital
+  - [X] Recht auf Updates und Änderungen
+  - [X] Recht auf Datenauswertung (anonymisiert)
+  - [X] Sperrung bei Missbrauch
+- [X] Haftsbeschränkungen
+  - [X] keine Garantie für 100% Uptime -> keine Schadensersatz bei Ausfall
+  - [X] Beschränkung auf Vorsatz / grobe Fahrlässigkeit -> kleiner Fehler im Code != Anspruch auf Schadensersatz
+  - [X] keine Haftung für Lernerfolg -> keine versprochenen Resultate
+  - [X] Haftungsauschluss für Datenverlust (durch Nutzerfehler) wie BSP. Zertifikate
 = Datenschutz
 = Gewerbe
 - [X] Kontaktformular

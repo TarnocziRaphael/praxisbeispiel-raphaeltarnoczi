@@ -161,58 +161,231 @@
                     <p class="text-gray-600 mb-8">Um unser Produkt einfach wiederzuerkennen, setzen wir auf drei klare
                         Elemente:</p>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
                         <div
-                            class="bg-gray-50 rounded-xl p-6 border border-gray-200 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-300">
+                            class="bg-gray-50 rounded-xl p-6 border border-gray-200 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-300">
                             <span
-                                class="text-xs uppercase tracking-widest text-gray-500 font-bold mb-4">Wortmarke</span>
-                            <span class="text-2xl font-black text-gray-900 tracking-tight">Smartpanther</span>
+                                class="text-xs uppercase tracking-widest text-gray-500 font-bold mb-6">Wortmarke</span>
+
+                            <div class="flex items-center justify-center h-32 w-full mb-6">
+                                <span class="text-2xl font-black text-gray-900 tracking-tight">Smarterpanther</span>
+                            </div>
+
+                            <p class="text-sm text-gray-600 leading-relaxed mt-auto">
+                                Der Name unserer Marke ist rechtlich geschützt, sodass ein hoher Wiedererkennungswert
+                                gegeben ist.
+                            </p>
                         </div>
 
                         <div
-                            class="bg-gray-50 rounded-xl p-6 border border-gray-200 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-300">
+                            class="bg-gray-50 rounded-xl p-6 border border-gray-200 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-300">
                             <span
-                                class="text-xs uppercase tracking-widest text-gray-500 font-bold mb-4">Bildmarke</span>
-                            <img src="assets/images/logo.png" alt="Logo Smartpanther"
-                                class="h-16 w-auto object-contain">
+                                class="text-xs uppercase tracking-widest text-gray-500 font-bold mb-6">Bildmarke</span>
+
+                            <div class="flex items-center justify-center h-32 w-full mb-6">
+                                <img src="assets/images/logo.png" alt="Logo Smarterpanther"
+                                    class="max-h-full w-auto object-contain">
+                            </div>
+
+                            <p class="text-sm text-gray-600 leading-relaxed mt-auto">
+                                Das Logo unserer Marke repräsentiert einen Panther, welcher in einem Motherboard
+                                eingebettet ist. Anstelle seines Gehirns ist ein Prozessor zu sehen.
+                            </p>
                         </div>
 
                         <div
-                            class="bg-gray-50 rounded-xl p-6 border border-gray-200 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-300">
+                            class="bg-gray-50 rounded-xl p-6 border border-gray-200 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-300">
                             <span
                                 class="text-xs uppercase tracking-widest text-gray-500 font-bold mb-6">Audiomarke</span>
 
+                            <div class="flex items-center justify-center h-32 w-full mb-6">
+                                <div
+                                    class="w-full max-w-[200px] bg-white border border-gray-200 rounded-full p-1.5 pr-4 flex items-center shadow-sm">
+                                    <audio id="brand-audio" src="assets/audio/sound.wav" type="audio/wav"
+                                        preload="auto">Panthergebrüll</audio>
+
+                                    <button id="audio-btn"
+                                        class="w-10 h-10 flex-shrink-0 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1">
+                                        <svg id="play-icon" class="w-4 h-4 ml-0.5" fill="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                        <svg id="pause-icon" class="w-4 h-4 hidden" fill="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                                        </svg>
+                                    </button>
+
+                                    <div class="ml-3 text-sm font-medium text-gray-700">
+                                        Sound abspielen
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="text-sm text-gray-600 leading-relaxed mt-auto">
+                                Die Audiomarke ist das Gebrüll eines Panthers, welches auch beim Öffnen der App zu hören
+                                sein wird.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-16 border-t border-gray-100 pt-10">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Markenschutz & Klassifizierung</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Unsere Markenbausteine sind geschützt, um unsere Identität im Bereich der digitalen Bildung
+                            langfristig zu sichern. Die Anmeldung orientiert sich an den folgenden Nizza-Klassen:
+                        </p>
+
+                        <div class="space-y-4">
                             <div
-                                class="w-full max-w-[200px] bg-white border border-gray-200 rounded-full p-1.5 pr-4 flex items-center shadow-sm">
-
-                                <audio id="brand-audio" src="assets/audio/sound.wav" type="audio/wav"
-                                    preload="auto"></audio>
-
-                                <button id="audio-btn"
-                                    class="w-10 h-10 flex-shrink-0 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1">
-                                    <svg id="play-icon" class="w-4 h-4 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                    <svg id="pause-icon" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-                                    </svg>
-                                </button>
-
-                                <div class="ml-3 text-sm font-medium text-gray-700">
-                                    Sound abspielen
+                                class="bg-gray-50 rounded-lg p-5 border border-gray-200 flex flex-col sm:flex-row sm:items-center gap-4">
+                                <div
+                                    class="flex-shrink-0 bg-blue-100 text-blue-700 font-bold w-12 h-12 rounded-full flex items-center justify-center text-lg">
+                                    09
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Software & Digitale Medien</h4>
+                                    <p class="text-sm text-gray-600 mt-1">Abdeckung unserer herunterladbaren Lern-Apps
+                                        und Bildungssoftware.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-gray-50 rounded-lg p-5 border border-gray-200 flex flex-col sm:flex-row sm:items-center gap-4">
+                                <div
+                                    class="flex-shrink-0 bg-blue-100 text-blue-700 font-bold w-12 h-12 rounded-full flex items-center justify-center text-lg">
+                                    41
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Erziehung, Ausbildung & Unterhaltung</h4>
+                                    <p class="text-sm text-gray-600 mt-1">Die Bereitstellung von Online-Kursen ist unser
+                                        Kernbereich.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-gray-50 rounded-lg p-5 border border-gray-200 flex flex-col sm:flex-row sm:items-center gap-4">
+                                <div
+                                    class="flex-shrink-0 bg-blue-100 text-blue-700 font-bold w-12 h-12 rounded-full flex items-center justify-center text-lg">
+                                    42
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Technologische Dienstleistungen</h4>
+                                    <p class="text-sm text-gray-600 mt-1">Bereitstellung und Hosting unserer
+                                        cloudbasierten Lernplattformen für Schulen und
+                                        Privatnutzer.</p>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
 
             <section id="lizenz" class="bg-white rounded-xl shadow-sm p-6 md:p-10 border border-gray-100">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Lizenz- und Nutzungsbedingungen (EULA)</h2>
-                <div class="space-y-4 text-gray-600">
-                    <p><strong>Lorem ipsum</strong> Lorem ipsum</p>
+
+                <div>
+                    <h3 class="font-bold text-lg underline">Nutzungsrechte</h3>
+                    <p class="text-sm">
+                        Grundsätzlich wird bei den Nutzungsrechten zwischen B2C (Business-to-Consumer) und B2B
+                        (Business-to-Business) unterschieden.
+                        Sämtliche hier angeführten Punkte, bei denen keine weitere Spezifizierung erfolgt, treffen auf
+                        beide Kundengruppen zu.
+                    </p>
+
+                    <h4 class="font-bold text-md">Familien-Abo (B2C)</h4>
+                    <p class="text-sm">
+                        Die Nutzungsrechte sind zeitlich auf die Dauer des Abonnements beschränkt, können nicht auf
+                        Dritte übertragen werden und gelten ausschließlich für private Zwecke.
+                        Der Kunde erwirbt ein einfaches, nicht-exklusives Nutzungsrecht, welches auf den eigenen
+                        Haushalt beschränkt ist. Dementsprechend ist die Weitergabe von Zugangsdaten an Personen
+                        außerhalb des
+                        eigenen Haushalts streng untersagt.
+                    </p>
+
+                    <h4 class="font-bold text-md">Schullizenz (B2B)</h4>
+                    <p class="text-sm">
+                        Die Nutzungsrechte gelten für eine vorab vertraglich festgelegte Anzahl an Schülern und
+                        Lehrkräften und sind ausschließlich im Zuge des Unterrichts gültig.
+                        Eine Weitergabe der Lizenz an Partnerschulen oder Privatpersonen, auch bei freien Kapazitäten,
+                        ist strikt untersagt.
+                    </p>
+
+                    <h4 class="font-bold text-md">Reverse Engineering</h4>
+                    <p class="text-sm">
+                        Das Reverse Engineering der Anwendung ist strikt verboten. Das Dekompilieren der Anwendung, um
+                        diese zu verändern, zu manipulieren, als eigene Anwendung weiterzuverkaufen oder um darauf
+                        basierend
+                        abgeleitete Werke oder Konkurrenzprodukte zu erstellen, ist untersagt.
+                    </p>
+                </div>
+
+                <div class="mt-6">
+                    <h3 class="font-bold text-lg underline">Unternehmensrechte</h3>
+
+                    <h4 class="font-bold text-md">Urheberrecht</h4>
+                    <p class="text-sm">
+                        Sämtliche Urheberrechte, Markenrechte (wie die Wort-, Bild- und Audiomarke), Designs, Texte und
+                        Lernmaterialien verbleiben zur Gänze bei der LernPfad Digital GmbH.
+                    </p>
+
+                    <h4 class="font-bold text-md">Recht auf Updates und Änderungen</h4>
+                    <p class="text-sm">
+                        Die LernPfad Digital GmbH behält sich das Recht vor, die App regelmäßig mit Updates zu
+                        versorgen, um neue Inhalte hinzuzufügen, Inhalte abzuändern und gegebenenfalls alte Inhalte zu
+                        entfernen.
+                        Dies betrifft sowohl die Funktionalität als auch das Design der App und die Lernmaterialien.
+                    </p>
+
+                    <h4 class="font-bold text-md">Recht auf anonymisierte Datenauswertung</h4>
+                    <p class="text-sm">
+                        Um das Verhalten der Nutzer auszuwerten und eine bessere Nutzererfahrung gewährleisten zu
+                        können, behält sich das Unternehmen das Recht vor, Nutzungsdaten anonymisiert zu erheben und zu
+                        analysieren.
+                    </p>
+
+                    <h4 class="font-bold text-md">Recht auf Sperrung</h4>
+                    <p class="text-sm">
+                        Bei Missbrauch oder Vertragsbruch behält sich die LernPfad Digital GmbH das Recht vor,
+                        Nutzerkonten temporär oder auch permanent zu sperren.
+                    </p>
+                </div>
+
+                <div class="mt-6">
+                    <h3 class="font-bold text-lg underline">Haftungsbeschränkungen</h3>
+
+                    <h4 class="font-bold text-md">Keine Garantie für dauerhafte Erreichbarkeit</h4>
+                    <p class="text-sm">
+                        Die permanente Erreichbarkeit kann nicht garantiert werden. Es kann aufgrund von Systemfehlern
+                        oder anderen Problemen zu kurzfristigen Ausfällen kommen.
+                        Die Nutzer haben in diesem Fall keinen Anspruch auf Schadensersatz.
+                    </p>
+
+                    <h4 class="font-bold text-md">Beschränkung der Haftung </h4>
+                    <p class="text-sm">
+                        Für den Fall, dass die App aufgrund eines Programmierfehlers fehlerhaft ist, besteht kein
+                        Anspruch auf Schadensersatz.
+                        Die LernPfad Digital GmbH haftet nur für Schäden, welche vorsätzlich oder durch groben
+                        Leichtsinn verursacht wurden.
+                        Bei leichter Fahrlässigkeit ist die Haftung ausgeschlossen.
+                    </p>
+
+                    <h4 class="font-bold text-md">Keine Garantie für Lernerfolg</h4>
+                    <p class="text-sm">
+                        Die App "SmarterPanther" dient als Unterstützung beim Erlernen von Programmierkenntnissen für
+                        Kinder im Alter von 8 bis 14 Jahren.
+                        Jedoch kann kein konkreter Lernerfolg garantiert werden, welcher durch die Nutzung der App
+                        erzielt wird.
+                        Dementsprechend ist auch hier ein Anspruch auf Schadensersatz ausgeschlossen.
+                    </p>
+
+                    <h4 class="font-bold text-md">Haftungsausschluss bei Datenverlust</h4>
+                    <p class="text-sm">
+                        Sollten Nutzer Daten (wie Zertifikate) aufgrund ihrer eigenen Fahrlässigkeit verlieren, haftet
+                        das Unternehmen nicht dafür.
+                        Nutzer sind dementsprechend angehalten, Daten auch lokal abzuspeichern.
+                        Das Unternehmen haftet nicht für verlorene Fortschritte durch technische Defekte, sofern
+                        branchenübliche Datensicherungsmaßnahmen getroffen wurden.
+                    </p>
                 </div>
             </section>
 
@@ -321,7 +494,7 @@
                         href="https://tarnocziraphael.github.io/praxisbeispiel-raphaeltarnoczi/"
                         class="underline">https://tarnocziraphael.github.io/praxisbeispiel-raphaeltarnoczi/</a>
                 </p>
-                <p class="font-bold text-blue-900 text-lg">Stand der Vereinbarkeit mit den Anforderungen</p>
+                <h3 class="font-bold text-blue-900 text-lg">Stand der Vereinbarkeit mit den Anforderungen</h3>
                 <p class="text-blue-800 text-sm">
                     Diese Website ist wegen der folgenden Unvereinbarkeiten und Ausnahmen teilweise mit
                     Konformitätsstufe AA der "Richtlinien für barrierefreie Webinhalte Web - <a
@@ -331,14 +504,14 @@
                         class="underline">Europäischen
                         Standard EN 301 549 V2 1.2 (2018-08)</a> vereinbar.
                 </p>
-                <p class="font-bold text-blue-900 text-lg">Erstellung dieser Erklärung</p>
+                <h3 class="font-bold text-blue-900 text-lg">Erstellung dieser Erklärung</h3>
                 <p class="text-blue-800 text-sm">
                     Diese Erklärung wurde am 11.05.2026 erstellt. Einzelne Seiteninhalte wurden von den Herausgebern
                     bei Veröffentlichung neuer Inhalte geprüft. Diese Erklärung wurde zuletzt am 11.05.2026
                     aktualisiert.
                 </p>
 
-                <p class="font-bold text-blue-900 text-lg">Feedback und Kontaktmöglichkeiten</p>
+                <h3 class="font-bold text-blue-900 text-lg">Feedback und Kontaktmöglichkeiten</h3>
                 <div class="text-blue-800 text-sm">
                     <p class="mb-2">
                         Die Angebote und Services auf dieser Website werden laufend verbessert und ausgebaut. Dabei ist
@@ -361,11 +534,12 @@
                     </ul>
                 </div>
 
-                <p class="font-bold text-blue-900 text-lg">Durchsetzungsverfahren</p>
+                <h3 class="font-bold text-blue-900 text-lg">Durchsetzungsverfahren</h3>
                 <p class="text-blue-800 text-sm">
                     Bei nicht zufriedenstellenden Antworten aus oben genannter Kontaktmöglichkeit können Sie sich
                     mittels Beschwerde an die Österreichische Forschungsförderungsgesellschaft mit beschränkter Haftung
                     (FFG) wenden. Die FFG nimmt über das Kontaktformular Beschwerden auf elektronische Weg entgegen.
+                    <br>
                     <a href="https://www.ffg.at/form/kontaktformular-beschwerdestelle" class="underline">Kontaktformular
                         der Beschwerdestelle</a>
                 </p>
@@ -455,15 +629,15 @@
         }).mount('#app');
     </script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const audio = document.getElementById('brand-audio');
             const btn = document.getElementById('audio-btn');
             const playIcon = document.getElementById('play-icon');
             const pauseIcon = document.getElementById('pause-icon');
 
             if (audio && btn) {
-            
-                btn.addEventListener('click', function() {
+
+                btn.addEventListener('click', function () {
                     if (audio.paused) {
                         audio.play();
                         playIcon.classList.add('hidden');
@@ -475,7 +649,7 @@
                     }
                 });
 
-                audio.addEventListener('ended', function() {
+                audio.addEventListener('ended', function () {
                     playIcon.classList.remove('hidden');
                     pauseIcon.classList.add('hidden');
                 });
