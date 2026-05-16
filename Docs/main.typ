@@ -107,6 +107,32 @@
   - [X] keine Haftung für Lernerfolg -> keine versprochenen Resultate
   - [X] Haftungsauschluss für Datenverlust (durch Nutzerfehler) wie BSP. Zertifikate
 = Datenschutz
+- [X] Verantwortlicher (Name, Adresse, Email)
+
+- [X] Hosting / Content Delievery (Hosting findet auf externen Servern statt)
+  - AWS / eu-central-1 in Frankfurt
+  - IP-Adressen, Server-Logfiles (Request-Typ, Timestamp, User-Agent, HTTP-Statuscode)
+  - Links auf AWS Datenschutzerklärung
+
+- [X] Datenverarbeitung
+  - [X] Kontaktformular
+  - [X] Benutzerkonten & Fortschritt
+  - [X] Zahlungsdienstleister
+
+- [X] Tracking & Analytics
+  - [X] Anonymisierte Auswertung z.B.: Google Analytics
+  - [X] Cookies
+
+- [X] Besonderer Schutz
+  - [X] Kinderdaten
+
+- [X] Betroffenenrechte
+  - [X] Art 15
+  - [X] Art 16
+  - [X] Art 17
+  - [X] Art 21
+  - [X] Beschwerderecht
+
 = Gewerbe
 - [X] Kontaktformular
 - [X] Impressum

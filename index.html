@@ -57,15 +57,16 @@
         </a>
 
         <header class="bg-white shadow-sm sticky top-0 z-40">
-            <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-                <div class="logo font-bold text-2xl text-brand mb-4 md:mb-0">
+            <div class="w-full px-4 xl:px-8 py-4 flex justify-between items-center">
+
+                <div class="logo font-bold text-2xl text-brand">
                     <img src="assets/images/logo.png" alt="SmarterPanther Logo" class="h-10 inline-block mr-2"
                         onerror="this.style.display='none'">
                     SmarterPanther
                 </div>
 
-                <nav aria-label="Hauptnavigation">
-                    <ul class="flex flex-wrap gap-4 md:gap-6 justify-center">
+                <nav aria-label="Hauptnavigation" class="hidden xl:block">
+                    <ul class="flex gap-6 justify-center">
                         <li v-for="link in navLinks" :key="link.href">
                             <a :href="link.href"
                                 class="font-semibold text-gray-600 hover:text-secondary transition-colors">
@@ -74,6 +75,59 @@
                         </li>
                     </ul>
                 </nav>
+
+                <div class="hidden xl:flex items-center gap-4">
+                    <a href="/login" class="font-semibold text-gray-600 hover:text-secondary transition-colors">
+                        Anmelden
+                    </a>
+                    <a href="/register"
+                        class="font-semibold bg-brand text-white px-4 py-2 rounded-md hover:opacity-90 transition-opacity">
+                        Registrieren
+                    </a>
+                </div>
+
+                <div class="xl:hidden flex items-center">
+                    <button @click="isMobileMenuOpen = !isMobileMenuOpen"
+                        class="text-gray-600 hover:text-brand focus:outline-none" aria-label="Menü öffnen">
+
+                        <svg v-if="!isMobileMenuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+
+                        <svg v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+
+                    </button>
+                </div>
+
+            </div>
+
+            <div v-show="isMobileMenuOpen"
+                class="xl:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
+                <div class="px-4 pt-2 pb-6 space-y-4">
+                    <nav aria-label="Mobile Navigation" class="flex flex-col space-y-3">
+                        <a v-for="link in navLinks" :key="link.href" :href="link.href"
+                            class="block font-semibold text-gray-600 hover:text-secondary transition-colors"
+                            @click="isMobileMenuOpen = false">
+                            {{ link.text }}
+                        </a>
+                    </nav>
+
+                    <div class="flex flex-col gap-3 pt-4 border-t border-gray-100">
+                        <a href="/login"
+                            class="text-center font-semibold text-gray-600 hover:text-secondary transition-colors py-2">
+                            Anmelden
+                        </a>
+                        <a href="/register"
+                            class="text-center font-semibold bg-brand text-white px-4 py-2 rounded-md hover:opacity-90 transition-opacity">
+                            Registrieren
+                        </a>
+                    </div>
+                </div>
             </div>
         </header>
 
@@ -90,6 +144,11 @@
 
                     <img :src="carouselImages[currentSlide].src" :alt="carouselImages[currentSlide].alt"
                         class="w-full h-full object-cover transition-opacity duration-500">
+
+                    <div
+                        class="absolute bottom-4 right-4 bg-black/60 text-white/90 text-xs px-2 py-1 rounded backdrop-blur-sm pointer-events-none">
+                        {{ carouselImages[currentSlide].credit }}
+                    </div>
 
                     <button @click="prevSlide" aria-label="Vorheriges Bild"
                         class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-brand/50 hover:bg-brand/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all focus:opacity-100">
@@ -355,7 +414,8 @@
 
                     <h4 class="font-bold text-md">Keine Garantie für dauerhafte Erreichbarkeit</h4>
                     <p class="text-sm">
-                        Die permanente Erreichbarkeit kann nicht garantiert werden. Es kann aufgrund von Systemfehlern
+                        Die permanente Erreichbarkeit kann nicht garantiert werden. Es kann aufgrund von Systemfehlern,
+                        Ausfällen bei Drittanbietern wie AWS
                         oder anderen Problemen zu kurzfristigen Ausfällen kommen.
                         Die Nutzer haben in diesem Fall keinen Anspruch auf Schadensersatz.
                     </p>
@@ -414,9 +474,169 @@
 
             <section id="datenschutz" class="bg-white rounded-xl shadow-sm p-6 md:p-10 border border-gray-100">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Datenschutzerklärung (DSGVO)</h2>
-                <ul class="space-y-3 text-gray-600">
-                    <li><strong>Lorem ipsum:</strong> Lorem ipsum</li>
-                </ul>
+
+                <div>
+                    <h3 class="font-bold text-lg underline">Allgemeine Informationen</h3>
+                    <div class="mb-4">
+                        <span class="text-sm font-bold block mb-1">Verantwortliche:</span>
+                        <ul class="list-disc ml-5 space-y-1 text-sm">
+                            <li>
+                                <p>LernPfad Digital GmbH</p>
+                            </li>
+                            <li>
+                                <p>Karlsgasse 13, 1040 Wien, Österreich</p>
+                            </li>
+                            <li><a href="mailto:contact@lernpfad.at"
+                                    class="hover:text-secondary underline">contact@lernpfad.at</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="text-sm font-bold block mb-1">Datenschutzbeauftragter:</span>
+                        <ul class="list-disc ml-5 space-y-1 text-sm">
+                            <li>
+                                <p>Karl Meier</p>
+                            </li>
+                            <li>
+                                <p>Karlsgasse 13, 1040 Wien, Österreich</p>
+                            </li>
+                            <li><a href="mailto:kmeier@lernpfad.at"
+                                    class="hover:text-secondary underline">kmeier@lernpfad.at</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <h3 class="font-bold text-lg underline">Hosting & Cloud Infrastruktur</h3>
+                    <p class="text-sm">
+                        Die Infrastruktur der Anwendung wird mittels Amazon Web Services gehostet. Hierbei wurde ein
+                        Server in der Region "eu-central-1" gewählt, welcher sich in Frankfurt, Deutschland, befindet.
+                        Dieser speichert Informationen rund um die Anfragen, wie IP-Adressen und Server-Logfiles. Diese
+                        beinhalten unter anderem den Request-Typ, einen Timestamp, den User-Agent und auch den
+                        HTTP-Statuscode.
+                        Weitere Informationen können in der <a
+                            href="https://d1.awsstatic.com/onedam/marketing-channels/website/public/legal/privacy/AWS_Privacy_Notice_2025-10-16_DE-DE.pdf"
+                            class="underline">Datenschutzerklärung
+                            von AWS</a> nachgelesen werden.
+                    </p>
+                </div>
+
+                <div class="mt-6">
+                    <h3 class="font-bold text-lg underline">Datenverarbeitung</h3>
+
+                    <h4 class="font-bold text-md mt-2">Kontaktformular</h4>
+                    <p class="text-sm">
+                        Bei Kontaktaufnahme über das Formular werden die E-Mail-Adresse, der Text der Nachricht und der
+                        Betreff gespeichert.
+                        Zweck dieser Speicherung ist die Bearbeitung Ihrer Anfrage.
+                    </p>
+
+                    <h4 class="font-bold text-md mt-2">Benutzerkonten & Fortschritt</h4>
+                    <p class="text-sm">
+                        Von Benutzern, sowohl den Aufsichtspersonen als auch den Endnutzern, werden die Zugangsdaten in
+                        Form von einem Benutzernamen und einem Passwort gespeichert.
+                        Dieses Passwort wird gesalzen und gehasht mittels bcrypt gespeichert, sodass die LernPfad
+                        Digital
+                        GmbH keinen direkten Zugriff auf Ihre Passwörter hat.
+                        Außerdem werden der Fortschritt innerhalb der App und die an die Endnutzer verliehenen
+                        Zertifikate gespeichert.
+                    </p>
+
+                    <h4 class="font-bold text-md mt-2">Zahlungsdienstleister</h4>
+                    <p class="text-sm">
+                        Die Zahlungen für Lizenzen werden mittels Stripe, einem PCI DSS zertifizierten
+                        Zahlungsdienstleister, abgewickelt.
+                        Daten, wie IBAN, Kreditkartennummer und Rechnungsadresse, werden mittels der Stripe-API direkt
+                        an Stripe verschlüsselt übermittelt und werden nie auf den Servern der LernPfad Digital GmbH
+                        bzw. AWS gespeichert.
+                        Genauere Informationen zum Datenschutz von Stripe können in der <a
+                            href="https://stripe.com/at/privacy" class="underline">Datenschutzerklärung von Stripe</a>
+                        erfasst werden.
+                        Es werden ausschließlich die Bestätigungen beziehungsweise Abrechnungen von der LernPfad Digital
+                        GmbH gespeichert.
+                    </p>
+                </div>
+
+                <div class="mt-6">
+                    <h3 class="font-bold text-lg underline">Tracking & Analytics</h3>
+
+                    <h4 class="font-bold text-md mt-2">Anonymisierte Auswertung</h4>
+                    <p class="text-sm">
+                        Für die anonymisierte Auswertung und das Tracking der Nutzer wird Google Analytics verwendet.
+                        Die Anonymisierung wird mittels Maskierung der IP-Adresse durchgeführt.
+                        Konkret getrackt wird das Verhalten der Endnutzer, wie beispielsweise die Dauer, welche sie für
+                        ein Modul benötigen, aber auch an welcher Stelle sie eventuell ein Modul abbrechen.
+                        Auf dieser Website wird auch das Verhalten wie User-Events getrackt.
+                        Dies wird rein zu Zwecken des Marketings und der Verbesserung der App beziehungsweise Website
+                        durchgeführt.
+                        Sie können dem Tracking jedoch sowohl in der App als auch auf dieser Website jederzeit
+                        widersprechen.
+                        Weitere Informationen können in der <a href="https://policies.google.com/privacy?hl=de"
+                            class="underline text-sm">Datenschutzerklärung von Google</a> nachgelesen werden.
+                    </p>
+
+                    <h4 class="font-bold text-md mt-2">Cookies</h4>
+                    <p class="text-sm">
+                        Diese Website verwendet technisch notwendige Cookies, wie JWTs (JSON Web Tokens), und speichert
+                        diese im LocalStorage, um den Login-Status zu speichern.
+                        Außerdem werden Cookies für das Tracking verwendet, denen Sie jedoch jederzeit widersprechen
+                        können.
+                    </p>
+                </div>
+
+                <div class="mt-6">
+                    <h3 class="font-bold text-lg underline">Besonderer Schutz</h3>
+
+                    <h4 class="font-bold text-md mt-2">Kinderdaten</h4>
+                    <p class="text-sm">
+                        Auch wenn SmarterPanther ein Produkt ist, welches sich primär an Kinder richtet, ist das
+                        Einverständnis eines Erziehungsberechtigten unbedingt notwendig.
+                        Der gesamte Kauf- und Registrierungsprozess muss strikt von einem Erziehungsberechtigten
+                        durchgeführt werden.
+                        Jeder Vertrag, welcher nicht von einem Erziehungsberechtigten durchgeführt wird, ist somit nicht
+                        rechtskräftig.
+                    </p>
+                </div>
+
+                <div class="mt-6">
+                    <h3 class="font-bold text-lg underline">Betroffenenrechte</h3>
+                    <p class="text-sm mb-2">
+                        Sollten Sie von einem dieser Rechte Gebrauch machen wollen, wenden Sie sich bitte an <a
+                            href="mailto:datenschutz@lernpfad.at" class="underline text-sm">datenschutz@lernpfad.at</a>.
+                        Wir werden uns mit Ihnen in Kontakt setzen, um Ihrem Anliegen zeitnah nachzukommen.
+                    </p>
+
+                    <h4 class="font-bold text-md">Recht auf Auskunft</h4>
+                    <p class="text-sm">
+                        Nutzer haben gemäß Art. 15 DSGVO das Recht auf Auskunft über ihre Daten.
+                    </p>
+
+                    <h4 class="font-bold text-md mt-2">Recht auf Berichtigung</h4>
+                    <p class="text-sm">
+                        Nutzer haben gemäß Art. 16 DSGVO das Recht auf Berichtigung ihrer Daten.
+                    </p>
+
+                    <h4 class="font-bold text-md mt-2">Recht auf Löschung</h4>
+                    <p class="text-sm">
+                        Nutzer haben gemäß Art. 17 DSGVO das Recht auf Löschung ihrer Daten, sofern dies nicht im
+                        Widerspruch mit anderen geltenden Gesetzen steht.
+                    </p>
+
+                    <h4 class="font-bold text-md mt-2">Recht auf Widerspruch</h4>
+                    <p class="text-sm">
+                        Nutzer haben gemäß Art. 21 DSGVO das Recht auf Widerspruch gegen die Datenverarbeitung ihrer
+                        personenbezogenen Daten.
+                    </p>
+
+                    <h4 class="font-bold text-md mt-2">Recht auf Beschwerde</h4>
+                    <p class="text-sm">
+                        Nutzer haben das Recht auf Beschwerde, sollten Teile der Anwendung beziehungsweise Website gegen
+                        geltende Datenschutzgesetze verstoßen.
+                        Wenden Sie sich hierfür bitte an die Österreichische Datenschutzbehörde.
+                        Genaueres über den Ablauf dieser Beschwerde können Sie auf dieser Website nachlesen: <a
+                            href="https://dsb.gv.at/eingabe-an-die-dsb/beschwerde"
+                            class="underline text-sm">https://dsb.gv.at/eingabe-an-die-dsb/beschwerde</a>
+                    </p>
+                </div>
             </section>
 
             <section id="kontakt" class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -549,6 +769,7 @@
 
         <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12">
             <p>&copy; {{ currentYear }} LernPfad Digital GmbH. Alle Rechte vorbehalten.</p>
+            <p>Stand: Mai</p>
         </footer>
     </div>
 
@@ -557,6 +778,7 @@
 
         createApp({
             setup() {
+                const isMobileMenuOpen = ref(false);
                 const navLinks = ref([
                     { text: 'Shop & Produkt', href: '#shop' },
                     { text: 'Marke', href: '#about' },
@@ -570,13 +792,26 @@
                     { type: 'Bilder (Galerie)', source: 'Unsplash', license: 'Unsplash Lizenz' },
                     { type: 'Schriftart', source: 'Google Fonts', license: 'SIL Open Font License (OFL)' },
                     { type: 'Audio (Hörmarke)', source: 'XHwZQ6GV (Freesound)', license: 'Attribution 3.0' },
-                    { type: 'Logo', source: 'OpenAI (ChatGPT / DALL-E 3)', license: 'OpenAI Nutzungsbedingungen' }
+                    { type: 'Logo', source: 'OpenAI (ChatGPT / DALL-E 3)', license: 'OpenAI Nutzungsbedingungen' },
+                    { type: 'Icons', source: 'heroicons', license: 'MIT License' }
                 ]);
 
                 const carouselImages = ref([
-                    { src: 'assets/images/pic1.jpg', alt: 'Blonder Junge lacht in die Kamera an Schreibtisch' },
-                    { src: 'assets/images/pic2.jpg', alt: 'Bild aus einem Computerraum, wo Schüler mithilfe der Software lernen' },
-                    { src: 'assets/images/pic3.jpg', alt: 'Vater und Sohn, die zusammen lernen' }
+                    {
+                        src: 'assets/images/pic1.jpg',
+                        alt: 'Blonder Junge lacht in die Kamera an Schreibtisch',
+                        credit: 'Photo by Vitaly Gariev on Unsplash'
+                    },
+                    {
+                        src: 'assets/images/pic2.jpg',
+                        alt: 'Bild aus einem Computerraum, wo Schüler mithilfe der Software lernen',
+                        credit: 'Photo by Haseeb Modi on Unsplash'
+                    },
+                    {
+                        src: 'assets/images/pic3.jpg',
+                        alt: 'Vater und Sohn, die zusammen lernen',
+                        credit: 'Photo by Vitaly Gariev on Unsplash'
+                    }
                 ]);
 
                 const currentSlide = ref(0);
@@ -613,6 +848,7 @@
                 const currentYear = computed(() => new Date().getFullYear());
 
                 return {
+                    isMobileMenuOpen,
                     navLinks,
                     mediaLicenses,
                     carouselImages,
